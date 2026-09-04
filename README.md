@@ -19,3 +19,9 @@ find . -type d ! -name "ch1_*" -name "ch*_*" -exec touch {}/NOTES.md \;
 - `! -name "ch1_*"`: Selects all directories that don't start with `ch1_`.
 - `-name "ch*_*"`: Selects all directories output from previous `-name` option that start with `ch*_*`.
 - `-exec touch {}/NOTES.md \;`: Creates `NOTES.md` inside each found directory.
+
+Temp removed with:
+
+```shell
+find . -type d ! -name "ch1_*" -name "ch*_*" -exec rm {}/NOTES.md \;
+```
